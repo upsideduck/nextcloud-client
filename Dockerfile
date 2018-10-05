@@ -1,8 +1,8 @@
 FROM alpine:latest
 MAINTAINER ZzenlD
 
-RUN apk add --no-cache nextcloud-client \
-    mkdir /nextcloud
+RUN apk add --no-cache nextcloud-client && \
+    mkdir nextcloud
 
 COPY run.sh /run.sh
 
