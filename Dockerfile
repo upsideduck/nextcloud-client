@@ -1,16 +1,11 @@
 FROM alpine:latest
 MAINTAINER ZzenlD
 
-# Default-Werte setzen
-ENV NEXTCLOUD_SYNC_INTERVAL=900
+RUN apk add --no-cache nextcloud-client \
+    mkdir /nextcloud
 
-# Installation bash und nextcloud-client
-RUN apk add --no-cache bash nextcloud-client
-
-# Verzeichnis anlegen
-RUN mkdir /nextcloud
-
-# Skript hinzufügen
 ADD run.sh /run.sh
+
+ENV NEXTCLOUD_SYNC_INTERVAL=900
 
 CMD /run.sh
