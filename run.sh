@@ -5,7 +5,7 @@
 echo "chown $USER:$USER /nextcloud"
 chown -R $USER:$USER /nextcloud
 
-for i in $TEMP
+for i in $NEXTCLOUD_EXCLUDE
 do
     echo $i >> /exclude.lst
 done

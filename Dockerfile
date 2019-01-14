@@ -8,7 +8,8 @@ ARG PGID=1000
 ENV NEXTCLOUD_SYNC_INTERVAL=900
 ENV USER=$USER \
     PUID=$PUID \
-    PGID=$PGID 
+    PGID=$PGID \
+    NEXTCLOUD_EXCLUDE=""
 
 # create group and user
 RUN addgroup -g $PGID $USER && adduser -G $USER -D -u $PUID $USER
